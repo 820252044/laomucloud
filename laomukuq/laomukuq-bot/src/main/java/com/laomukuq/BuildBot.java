@@ -28,6 +28,7 @@ import java.util.concurrent.Executors;
  * @description 构建Bot
  * @date 2019-12-10
  */
+
 public class BuildBot {
     private List<PicqBotX> picqBotXs;
     private ExecutorService executorService;

@@ -1,5 +1,7 @@
 package com.laomukuq.entity;
 
+import java.util.Arrays;
+
 /**
  * @author laomu
  * @version 1.0
@@ -71,5 +73,17 @@ public class Tictactoe {
 
     public void setOQ(Long OQ) {
         this.OQ = OQ;
+    }
+
+    @Override
+    public String toString() {
+        return "Tictactoe{" +
+                "chessboard=" + Arrays.toString(chessboard) +
+                ", startFlag=" + startFlag +
+                ", stepCount=" + stepCount +
+                ", players=" + players +
+                ", XQ=" + XQ +
+                ", OQ=" + OQ +
+                '}';
     }
 }
