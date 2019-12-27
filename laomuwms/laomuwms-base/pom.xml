@@ -12,6 +12,17 @@
     <groupId>com.laomuwms.base</groupId>
     <artifactId>laomuwms-base</artifactId>
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/net.sf.barcode4j/barcode4j -->
+        <dependency>
+            <groupId>net.sf.barcode4j</groupId>
+            <artifactId>barcode4j</artifactId>
+            <version>2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.zxing</groupId>
+            <artifactId>javase</artifactId>
+            <version>3.3.3</version>
+        </dependency>
         <!-- web启动器 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

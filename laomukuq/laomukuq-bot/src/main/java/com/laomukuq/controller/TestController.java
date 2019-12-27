@@ -2,7 +2,6 @@ package com.laomukuq.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,8 +16,6 @@ public class TestController {
 
     @Autowired
     RedisTemplate<String,Object> redisTemplate;
-
-    private User user;
 
     //添加字符串
     @GetMapping("setSet")
@@ -41,7 +38,9 @@ public class TestController {
 
     //获取对象
     @GetMapping("getUser")
-    public void getUser(){
-        System.out.println((User)this.redisTemplate.opsForValue().get("user"));
+    public User getUser(){
+        User user = (User) this.redisTemplate.opsForValue().get("user");
+        System.out.println(user != null ? user.toString() : null);
+        return user;
     }
 }
