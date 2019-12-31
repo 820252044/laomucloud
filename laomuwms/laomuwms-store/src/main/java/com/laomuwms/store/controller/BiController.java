@@ -1,14 +1,15 @@
 package com.laomuwms.store.controller;
 
 import com.laomuwms.store.service.BiService;
+import laomuwms.model.json.Highchart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -18,37 +19,26 @@ public class BiController {
     @Autowired
     private BiService biService;
 
+    /**
+     * 首页概览数据
+     *
+     * @return
+     */
     @GetMapping("/homeBi")
     public ResponseEntity<Map> bi() {
 
-        String num1 = "0";
-        String num2 = "0";
-        String num3 = "0";
-        String num4 = "0";
-        String num5 = "0";
-
         // 预约进货行项目  待上架
-
-        num1 = String.valueOf(biService.stayOnCounts());
-
+        long num1 = biService.stayOnCounts();
         // 验收记录  待收货
-
-        num2 = String.valueOf(biService.stayGoods());
-
+        long num2 = biService.stayGoods();
         // 拣货中
-
-        num3 = String.valueOf(biService.pickingGoods());
-
-
+        long num3 = biService.pickingGoods();
         // 待拣货
-
-        num4 = String.valueOf(biService.stayPickGoods());
-
+        long num4 = biService.stayPickGoods();
         // 计划数量
+        long num5 = biService.planGoods();
 
-        num5 = String.valueOf(biService.planGoods());
-
-        Map<String, String> resultMap = new HashMap<>();
+        Map<String, Long> resultMap = new HashMap<>();
         resultMap.put("num1", num1);
         resultMap.put("num2", num2);
         resultMap.put("num3", num3);
@@ -56,6 +46,94 @@ public class BiController {
         resultMap.put("num5", num5);
 
         return new ResponseEntity<>(resultMap, HttpStatus.OK);
+    }
+
+    /**
+     * highchart
+     *
+     * @return
+     */
+    @GetMapping("/dayCountMonth/{reportType}")
+    public ResponseEntity<List<Highchart>> dayCountMonth(@PathVariable("reportType") String reportType) {
+        List<Highchart> list = new ArrayList<Highchart>();
+        Highchart hc = new Highchart();
+        List<Map<String, Object>> maplist = biService.dayCountMonth();
+        List<Map> lt = new ArrayList<>();
+        hc.setName("近七日下架数量");
+        hc.setType(reportType);
+        Map<String, Object> map;
+
+        if (maplist != null && maplist.size() > 0) {
+            for (Map<String, Object> object : maplist) {
+                map = new HashMap<>();
+                map.put("name", object.get("create_date").toString());
+                map.put("y", (int) Double.parseDouble(object.get("amount").toString()));
+                lt.add(map);
+            }
+        }
+        hc.setData(lt);
+        list.add(hc);
+        return ResponseEntity.ok(list);
+    }
+
+    /**
+     * highchart
+     *
+     * @return
+     */
+    @GetMapping("/studentCountMonth/{reportType}")
+    public ResponseEntity<List<Highchart>> studentCountMonth(@PathVariable("reportType") String reportType) {
+        List<Highchart> list = new ArrayList<>();
+        Highchart hc = new Highchart();
+        List<Map<String, Object>> maplist = biService.studentCountMonth();
+
+        List<Map> lt = new ArrayList<>();
+        hc.setName("上架数量前6");
+        hc.setType(reportType);
+        Map<String, Object> map;
+
+        if (null != maplist && maplist.size() > 0) {
+            for (Map<String, Object> object : maplist) {
+                map = new HashMap<>();
+                map.put("name", object.get("goodsid").toString());
+                map.put("y", (int) Double.parseDouble(object.get("amount").toString()));
+                lt.add(map);
+            }
+        }
+
+        hc.setData(lt);
+        list.add(hc);
+        return ResponseEntity.ok(list);
+    }
+
+    /**
+     * highchart
+     *
+     * @return
+     */
+    @GetMapping("/studentCount/{reportType}")
+    @ResponseBody
+    public ResponseEntity<List<Highchart>> studentCount(@PathVariable("reportType") String reportType) {
+        List<Highchart> list = new ArrayList<Highchart>();
+        Highchart hc = new Highchart();
+        List<Map<String,Object>> maplist=biService.studentCount();
+        List<Map> lt = new ArrayList<>();
+        hc.setName("下架数量前6");
+        hc.setType(reportType);
+        Map<String, Object> map;
+
+        if (null != maplist && maplist.size() > 0) {
+            for (Map<String,Object> object : maplist) {
+                map = new HashMap<>();
+                map.put("name", object.get("goodsid").toString());
+                map.put("y",  (int) Double.parseDouble(object.get("amount").toString()));
+                lt.add(map);
+            }
+        }
+
+        hc.setData(lt);
+        list.add(hc);
+        return ResponseEntity.ok(list);
     }
 
 }

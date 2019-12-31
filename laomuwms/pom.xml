@@ -13,6 +13,7 @@
         <module>laomuwms-store</module>
         <module>laomuwms-shipment</module>
         <module>laomuwms-onlinedev</module>
+        <module>laomuwms-entity</module>
     </modules>
     <packaging>pom</packaging>
 
