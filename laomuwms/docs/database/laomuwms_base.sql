@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `laomuwms_base` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `laomuwms_base`;
 /*
  Navicat Premium Data Transfer
 

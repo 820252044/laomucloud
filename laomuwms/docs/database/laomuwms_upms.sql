@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `laomuwms_upms` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `laomuwms_upms`;
 /*
  Navicat Premium Data Transfer
 
@@ -5,7 +7,7 @@
  Source Server Type    : MySQL
  Source Server Version : 50727
  Source Host           : localhost:3306
- Source Schema         : wms
+ Source Schema         : laomuwms_upms
 
  Target Server Type    : MySQL
  Target Server Version : 50727

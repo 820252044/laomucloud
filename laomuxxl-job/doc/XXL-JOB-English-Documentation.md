@@ -393,7 +393,7 @@ Source code is organized by maven,unzip it and structure is as follows:
     xxl-job-admin：schedule admin center
     xxl-job-core：public common dependent library
     xxl-job-executor：executor Sample(Select appropriate version of executor,Can be used directly,You can also refer to it and transform existing projects into executors）
-        ：xxl-job-executor-sample-spring：Spring version，executors managed by Spring，general and recommend;
+    ：xxl-job-executor-sample-spring：Spring version，executors managed by Spring，general and recommend;
         ：xxl-job-executor-sample-springboot：Springboot version，executors managed by Springboot;
         ：xxl-job-executor-sample-jfinal：JFinal version，executors managed by JFinal;
 	
@@ -653,8 +653,8 @@ Actually it is a python script fragment.
 click"执行器管理" on the left menu,it will go to the page as shown below:
 ![输入图片说明](https://www.xuxueli.com/doc/static/xxl-job/images/img_Hr2T.png "在这里输入图片标题")
 
-    1,"调度中心OnLine”:display schedule center machine list,when task is scheduled it will callback schedule center for notify the execution result in failover mode, so that it can avoid a single point scheduler;
-    2,"执行器列表" :display all nodes under this executor group.
+  1,"调度中心OnLine”:display schedule center machine list,when task is scheduled it will callback schedule center for notify the execution result in failover mode, so that it can avoid a single point scheduler;
+  2,"执行器列表" :display all nodes under this executor group.
 
 If you want to create a new executor,please click "+新增执行器" button: 
 ![输入图片说明](https://www.xuxueli.com/doc/static/xxl-job/images/img_V3vF.png "在这里输入图片标题")
@@ -755,7 +755,7 @@ Click the delete button on the right side of the task,the task will be deteted.
     - /db :db scripts
     - /xxl-job-admin :schedule and admin center
     - /xxl-job-core :common core Jar
-    - /xxl-job-executor-samples :executor，Demo project（you can develop on this demo project or adjust your own exist project to executor project)
+  - /xxl-job-executor-samples :executor，Demo project（you can develop on this demo project or adjust your own exist project to executor project)
 
 ### 5.2 configure database
 XXL-JOB schedule module is implemented based on Quartz cluster,it’s “database” is extended based on Quartz’s 11 mysql tables.
