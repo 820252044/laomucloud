@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laomuwms.store.mapper.WmImNoticeIMapper">
+    <resultMap id="BaseResultMap" type="com.laomuwms.store.entity.WmImNoticeI">
+        <!--@mbg.generated-->
+        <!--@Table wm_im_notice_i-->
+        <id column="id" jdbcType="VARCHAR" property="id"/>
+        <result column="create_name" jdbcType="VARCHAR" property="createName"/>
+        <result column="create_by" jdbcType="VARCHAR" property="createBy"/>
+        <result column="create_date" jdbcType="TIMESTAMP" property="createDate"/>
+        <result column="update_name" jdbcType="VARCHAR" property="updateName"/>
+        <result column="update_by" jdbcType="VARCHAR" property="updateBy"/>
+        <result column="update_date" jdbcType="TIMESTAMP" property="updateDate"/>
+        <result column="sys_org_code" jdbcType="VARCHAR" property="sysOrgCode"/>
+        <result column="sys_company_code" jdbcType="VARCHAR" property="sysCompanyCode"/>
+        <result column="im_notice_id" jdbcType="VARCHAR" property="imNoticeId"/>
+        <result column="im_notice_item" jdbcType="VARCHAR" property="imNoticeItem"/>
+        <result column="goods_code" jdbcType="VARCHAR" property="goodsCode"/>
+        <result column="goods_count" jdbcType="VARCHAR" property="goodsCount"/>
+        <result column="goods_prd_data" jdbcType="TIMESTAMP" property="goodsPrdData"/>
+        <result column="goods_batch" jdbcType="VARCHAR" property="goodsBatch"/>
+        <result column="bin_pre" jdbcType="VARCHAR" property="binPre"/>
+        <result column="goods_fvol" jdbcType="VARCHAR" property="goodsFvol"/>
+        <result column="goods_weight" jdbcType="VARCHAR" property="goodsWeight"/>
+        <result column="bin_plan" jdbcType="VARCHAR" property="binPlan"/>
+        <result column="goods_unit" jdbcType="VARCHAR" property="goodsUnit"/>
+        <result column="goods_wqm_count" jdbcType="VARCHAR" property="goodsWqmCount"/>
+        <result column="goods_qm_count" jdbcType="VARCHAR" property="goodsQmCount"/>
+        <result column="noticei_sta" jdbcType="VARCHAR" property="noticeiSta"/>
+        <result column="base_unit" jdbcType="VARCHAR" property="baseUnit"/>
+        <result column="base_goodscount" jdbcType="VARCHAR" property="baseGoodscount"/>
+        <result column="base_qmcount" jdbcType="VARCHAR" property="baseQmcount"/>
+        <result column="goods_name" jdbcType="VARCHAR" property="goodsName"/>
+        <result column="other_id" jdbcType="VARCHAR" property="otherId"/>
+        <result column="im_cus_code" jdbcType="VARCHAR" property="imCusCode"/>
+        <result column="im_beizhu" jdbcType="VARCHAR" property="imBeizhu"/>
+        <result column="barcode" jdbcType="VARCHAR" property="barcode"/>
+        <result column="shp_gui_ge" jdbcType="VARCHAR" property="shpGuiGe"/>
+        <result column="BZHI_QI" jdbcType="VARCHAR" property="bzhiQi"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        id, create_name, create_by, create_date, update_name, update_by, update_date, sys_org_code,
+        sys_company_code, im_notice_id, im_notice_item, goods_code, goods_count, goods_prd_data,
+        goods_batch, bin_pre, goods_fvol, goods_weight, bin_plan, goods_unit, goods_wqm_count,
+        goods_qm_count, noticei_sta, base_unit, base_goodscount, base_qmcount, goods_name,
+        other_id, im_cus_code, im_beizhu, barcode, shp_gui_ge, BZHI_QI
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+        <!--@mbg.generated-->
+        select
+        <include refid="Base_Column_List"/>
+        from wm_im_notice_i
+        where id = #{id,jdbcType=VARCHAR}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+        <!--@mbg.generated-->
+        delete from wm_im_notice_i
+        where id = #{id,jdbcType=VARCHAR}
+    </delete>
+    <insert id="insert" parameterType="com.laomuwms.store.entity.WmImNoticeI">
+        <!--@mbg.generated-->
+        insert into wm_im_notice_i (id, create_name, create_by,
+        create_date, update_name, update_by,
+        update_date, sys_org_code, sys_company_code,
+        im_notice_id, im_notice_item, goods_code,
+        goods_count, goods_prd_data, goods_batch,
+        bin_pre, goods_fvol, goods_weight,
+        bin_plan, goods_unit, goods_wqm_count,
+        goods_qm_count, noticei_sta, base_unit,
+        base_goodscount, base_qmcount, goods_name,
+        other_id, im_cus_code, im_beizhu,
+        barcode, shp_gui_ge, BZHI_QI
+        )
+        values (#{id,jdbcType=VARCHAR}, #{createName,jdbcType=VARCHAR}, #{createBy,jdbcType=VARCHAR},
+        #{createDate,jdbcType=TIMESTAMP}, #{updateName,jdbcType=VARCHAR}, #{updateBy,jdbcType=VARCHAR},
+        #{updateDate,jdbcType=TIMESTAMP}, #{sysOrgCode,jdbcType=VARCHAR}, #{sysCompanyCode,jdbcType=VARCHAR},
+        #{imNoticeId,jdbcType=VARCHAR}, #{imNoticeItem,jdbcType=VARCHAR}, #{goodsCode,jdbcType=VARCHAR},
+        #{goodsCount,jdbcType=VARCHAR}, #{goodsPrdData,jdbcType=TIMESTAMP}, #{goodsBatch,jdbcType=VARCHAR},
+        #{binPre,jdbcType=VARCHAR}, #{goodsFvol,jdbcType=VARCHAR}, #{goodsWeight,jdbcType=VARCHAR},
+        #{binPlan,jdbcType=VARCHAR}, #{goodsUnit,jdbcType=VARCHAR}, #{goodsWqmCount,jdbcType=VARCHAR},
+        #{goodsQmCount,jdbcType=VARCHAR}, #{noticeiSta,jdbcType=VARCHAR}, #{baseUnit,jdbcType=VARCHAR},
+        #{baseGoodscount,jdbcType=VARCHAR}, #{baseQmcount,jdbcType=VARCHAR}, #{goodsName,jdbcType=VARCHAR},
+        #{otherId,jdbcType=VARCHAR}, #{imCusCode,jdbcType=VARCHAR}, #{imBeizhu,jdbcType=VARCHAR},
+        #{barcode,jdbcType=VARCHAR}, #{shpGuiGe,jdbcType=VARCHAR}, #{bzhiQi,jdbcType=VARCHAR}
+        )
+    </insert>
+    <insert id="insertSelective" parameterType="com.laomuwms.store.entity.WmImNoticeI">
+        <!--@mbg.generated-->
+        insert into wm_im_notice_i
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="createName != null">
+                create_name,
+            </if>
+            <if test="createBy != null">
+                create_by,
+            </if>
+            <if test="createDate != null">
+                create_date,
+            </if>
+            <if test="updateName != null">
+                update_name,
+            </if>
+            <if test="updateBy != null">
+                update_by,
+            </if>
+            <if test="updateDate != null">
+                update_date,
+            </if>
+            <if test="sysOrgCode != null">
+                sys_org_code,
+            </if>
+            <if test="sysCompanyCode != null">
+                sys_company_code,
+            </if>
+            <if test="imNoticeId != null">
+                im_notice_id,
+            </if>
+            <if test="imNoticeItem != null">
+                im_notice_item,
+            </if>
+            <if test="goodsCode != null">
+                goods_code,
+            </if>
+            <if test="goodsCount != null">
+                goods_count,
+            </if>
+            <if test="goodsPrdData != null">
+                goods_prd_data,
+            </if>
+            <if test="goodsBatch != null">
+                goods_batch,
+            </if>
+            <if test="binPre != null">
+                bin_pre,
+            </if>
+            <if test="goodsFvol != null">
+                goods_fvol,
+            </if>
+            <if test="goodsWeight != null">
+                goods_weight,
+            </if>
+            <if test="binPlan != null">
+                bin_plan,
+            </if>
+            <if test="goodsUnit != null">
+                goods_unit,
+            </if>
+            <if test="goodsWqmCount != null">
+                goods_wqm_count,
+            </if>
+            <if test="goodsQmCount != null">
+                goods_qm_count,
+            </if>
+            <if test="noticeiSta != null">
+                noticei_sta,
+            </if>
+            <if test="baseUnit != null">
+                base_unit,
+            </if>
+            <if test="baseGoodscount != null">
+                base_goodscount,
+            </if>
+            <if test="baseQmcount != null">
+                base_qmcount,
+            </if>
+            <if test="goodsName != null">
+                goods_name,
+            </if>
+            <if test="otherId != null">
+                other_id,
+            </if>
+            <if test="imCusCode != null">
+                im_cus_code,
+            </if>
+            <if test="imBeizhu != null">
+                im_beizhu,
+            </if>
+            <if test="barcode != null">
+                barcode,
+            </if>
+            <if test="shpGuiGe != null">
+                shp_gui_ge,
+            </if>
+            <if test="bzhiQi != null">
+                BZHI_QI,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=VARCHAR},
+            </if>
+            <if test="createName != null">
+                #{createName,jdbcType=VARCHAR},
+            </if>
+            <if test="createBy != null">
+                #{createBy,jdbcType=VARCHAR},
+            </if>
+            <if test="createDate != null">
+                #{createDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateName != null">
+                #{updateName,jdbcType=VARCHAR},
+            </if>
+            <if test="updateBy != null">
+                #{updateBy,jdbcType=VARCHAR},
+            </if>
+            <if test="updateDate != null">
+                #{updateDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="sysOrgCode != null">
+                #{sysOrgCode,jdbcType=VARCHAR},
+            </if>
+            <if test="sysCompanyCode != null">
+                #{sysCompanyCode,jdbcType=VARCHAR},
+            </if>
+            <if test="imNoticeId != null">
+                #{imNoticeId,jdbcType=VARCHAR},
+            </if>
+            <if test="imNoticeItem != null">
+                #{imNoticeItem,jdbcType=VARCHAR},
+            </if>
+            <if test="goodsCode != null">
+                #{goodsCode,jdbcType=VARCHAR},
+            </if>
+            <if test="goodsCount != null">
+                #{goodsCount,jdbcType=VARCHAR},
+            </if>
+            <if test="goodsPrdData != null">
+                #{goodsPrdData,jdbcType=TIMESTAMP},
+            </if>
+            <if test="goodsBatch != null">
+                #{goodsBatch,jdbcType=VARCHAR},
+            </if>
+            <if test="binPre != null">
+                #{binPre,jdbcType=VARCHAR},
+            </if>
+            <if test="goodsFvol != null">
+                #{goodsFvol,jdbcType=VARCHAR},
+            </if>
+            <if test="goodsWeight != null">
+                #{goodsWeight,jdbcType=VARCHAR},
+            </if>
+            <if test="binPlan != null">
+                #{binPlan,jdbcType=VARCHAR},
+            </if>
+            <if test="goodsUnit != null">
+                #{goodsUnit,jdbcType=VARCHAR},
+            </if>
+            <if test="goodsWqmCount != null">
+                #{goodsWqmCount,jdbcType=VARCHAR},
+            </if>
+            <if test="goodsQmCount != null">
+                #{goodsQmCount,jdbcType=VARCHAR},
+            </if>
+            <if test="noticeiSta != null">
+                #{noticeiSta,jdbcType=VARCHAR},
+            </if>
+            <if test="baseUnit != null">
+                #{baseUnit,jdbcType=VARCHAR},
+            </if>
+            <if test="baseGoodscount != null">
+                #{baseGoodscount,jdbcType=VARCHAR},
+            </if>
+            <if test="baseQmcount != null">
+                #{baseQmcount,jdbcType=VARCHAR},
+            </if>
+            <if test="goodsName != null">
+                #{goodsName,jdbcType=VARCHAR},
+            </if>
+            <if test="otherId != null">
+                #{otherId,jdbcType=VARCHAR},
+            </if>
+            <if test="imCusCode != null">
+                #{imCusCode,jdbcType=VARCHAR},
+            </if>
+            <if test="imBeizhu != null">
+                #{imBeizhu,jdbcType=VARCHAR},
+            </if>
+            <if test="barcode != null">
+                #{barcode,jdbcType=VARCHAR},
+            </if>
+            <if test="shpGuiGe != null">
+                #{shpGuiGe,jdbcType=VARCHAR},
+            </if>
+            <if test="bzhiQi != null">
+                #{bzhiQi,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.laomuwms.store.entity.WmImNoticeI">
+        <!--@mbg.generated-->
+        update wm_im_notice_i
+        <set>
+            <if test="createName != null">
+                create_name = #{createName,jdbcType=VARCHAR},
+            </if>
+            <if test="createBy != null">
+                create_by = #{createBy,jdbcType=VARCHAR},
+            </if>
+            <if test="createDate != null">
+                create_date = #{createDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateName != null">
+                update_name = #{updateName,jdbcType=VARCHAR},
+            </if>
+            <if test="updateBy != null">
+                update_by = #{updateBy,jdbcType=VARCHAR},
+            </if>
+            <if test="updateDate != null">
+                update_date = #{updateDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="sysOrgCode != null">
+                sys_org_code = #{sysOrgCode,jdbcType=VARCHAR},
+            </if>
+            <if test="sysCompanyCode != null">
+                sys_company_code = #{sysCompanyCode,jdbcType=VARCHAR},
+            </if>
+            <if test="imNoticeId != null">
+                im_notice_id = #{imNoticeId,jdbcType=VARCHAR},
+            </if>
+            <if test="imNoticeItem != null">
+                im_notice_item = #{imNoticeItem,jdbcType=VARCHAR},
+            </if>
+            <if test="goodsCode != null">
+                goods_code = #{goodsCode,jdbcType=VARCHAR},
+            </if>
+            <if test="goodsCount != null">
+                goods_count = #{goodsCount,jdbcType=VARCHAR},
+            </if>
+            <if test="goodsPrdData != null">
+                goods_prd_data = #{goodsPrdData,jdbcType=TIMESTAMP},
+            </if>
+            <if test="goodsBatch != null">
+                goods_batch = #{goodsBatch,jdbcType=VARCHAR},
+            </if>
+            <if test="binPre != null">
+                bin_pre = #{binPre,jdbcType=VARCHAR},
+            </if>
+            <if test="goodsFvol != null">
+                goods_fvol = #{goodsFvol,jdbcType=VARCHAR},
+            </if>
+            <if test="goodsWeight != null">
+                goods_weight = #{goodsWeight,jdbcType=VARCHAR},
+            </if>
+            <if test="binPlan != null">
+                bin_plan = #{binPlan,jdbcType=VARCHAR},
+            </if>
+            <if test="goodsUnit != null">
+                goods_unit = #{goodsUnit,jdbcType=VARCHAR},
+            </if>
+            <if test="goodsWqmCount != null">
+                goods_wqm_count = #{goodsWqmCount,jdbcType=VARCHAR},
+            </if>
+            <if test="goodsQmCount != null">
+                goods_qm_count = #{goodsQmCount,jdbcType=VARCHAR},
+            </if>
+            <if test="noticeiSta != null">
+                noticei_sta = #{noticeiSta,jdbcType=VARCHAR},
+            </if>
+            <if test="baseUnit != null">
+                base_unit = #{baseUnit,jdbcType=VARCHAR},
+            </if>
+            <if test="baseGoodscount != null">
+                base_goodscount = #{baseGoodscount,jdbcType=VARCHAR},
+            </if>
+            <if test="baseQmcount != null">
+                base_qmcount = #{baseQmcount,jdbcType=VARCHAR},
+            </if>
+            <if test="goodsName != null">
+                goods_name = #{goodsName,jdbcType=VARCHAR},
+            </if>
+            <if test="otherId != null">
+                other_id = #{otherId,jdbcType=VARCHAR},
+            </if>
+            <if test="imCusCode != null">
+                im_cus_code = #{imCusCode,jdbcType=VARCHAR},
+            </if>
+            <if test="imBeizhu != null">
+                im_beizhu = #{imBeizhu,jdbcType=VARCHAR},
+            </if>
+            <if test="barcode != null">
+                barcode = #{barcode,jdbcType=VARCHAR},
+            </if>
+            <if test="shpGuiGe != null">
+                shp_gui_ge = #{shpGuiGe,jdbcType=VARCHAR},
+            </if>
+            <if test="bzhiQi != null">
+                BZHI_QI = #{bzhiQi,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=VARCHAR}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.laomuwms.store.entity.WmImNoticeI">
+        <!--@mbg.generated-->
+        update wm_im_notice_i
+        set create_name = #{createName,jdbcType=VARCHAR},
+        create_by = #{createBy,jdbcType=VARCHAR},
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+        update_name = #{updateName,jdbcType=VARCHAR},
+        update_by = #{updateBy,jdbcType=VARCHAR},
+        update_date = #{updateDate,jdbcType=TIMESTAMP},
+        sys_org_code = #{sysOrgCode,jdbcType=VARCHAR},
+        sys_company_code = #{sysCompanyCode,jdbcType=VARCHAR},
+        im_notice_id = #{imNoticeId,jdbcType=VARCHAR},
+        im_notice_item = #{imNoticeItem,jdbcType=VARCHAR},
+        goods_code = #{goodsCode,jdbcType=VARCHAR},
+        goods_count = #{goodsCount,jdbcType=VARCHAR},
+        goods_prd_data = #{goodsPrdData,jdbcType=TIMESTAMP},
+        goods_batch = #{goodsBatch,jdbcType=VARCHAR},
+        bin_pre = #{binPre,jdbcType=VARCHAR},
+        goods_fvol = #{goodsFvol,jdbcType=VARCHAR},
+        goods_weight = #{goodsWeight,jdbcType=VARCHAR},
+        bin_plan = #{binPlan,jdbcType=VARCHAR},
+        goods_unit = #{goodsUnit,jdbcType=VARCHAR},
+        goods_wqm_count = #{goodsWqmCount,jdbcType=VARCHAR},
+        goods_qm_count = #{goodsQmCount,jdbcType=VARCHAR},
+        noticei_sta = #{noticeiSta,jdbcType=VARCHAR},
+        base_unit = #{baseUnit,jdbcType=VARCHAR},
+        base_goodscount = #{baseGoodscount,jdbcType=VARCHAR},
+        base_qmcount = #{baseQmcount,jdbcType=VARCHAR},
+        goods_name = #{goodsName,jdbcType=VARCHAR},
+        other_id = #{otherId,jdbcType=VARCHAR},
+        im_cus_code = #{imCusCode,jdbcType=VARCHAR},
+        im_beizhu = #{imBeizhu,jdbcType=VARCHAR},
+        barcode = #{barcode,jdbcType=VARCHAR},
+        shp_gui_ge = #{shpGuiGe,jdbcType=VARCHAR},
+        BZHI_QI = #{bzhiQi,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=VARCHAR}
+    </update>
+    <select id="stayOnCounts" resultType="java.lang.Long">
+    select IFNULL(CONVERT( sum(base_goodscount),DECIMAL(10,0)), 0)as linecount from wm_im_notice_i where bin_pre = 'N'
+  </select>
+    <select id="stayGoods" resultType="java.lang.Long">
+    select IFNULL(CONVERT( sum(base_goodscount),DECIMAL(10,0)), 0) as linecount from wm_in_qm_i where bin_sta = 'N'
+  </select>
+    <select id="pickingGoods" resultType="java.lang.Long">
+    select IFNULL(CONVERT( sum(base_goodscount),DECIMAL(10,0)), 0) as linecount from wm_om_qm_i where bin_sta = 'I'
+  </select>
+    <select id="stayPickGoods" resultType="java.lang.Long">
+    select IFNULL(CONVERT( sum(base_goodscount),DECIMAL(10,0)), 0) as linecount from wm_om_qm_i where bin_sta = 'N'
+  </select>
+    <select id="planGoods" resultType="java.lang.Long">
+    select IFNULL(CONVERT( sum(base_goodscount),DECIMAL(10,0)), 0) as linecount from wm_to_move_goods where move_Sta = '计划中'
+  </select>
+    <select id="dayCountMonth" resultType="java.util.Map">
+    SELECT
+    *
+    FROM
+    (
+    SELECT
+    DATE_FORMAT( create_date, '%Y-%m-%d' ) AS create_date,
+    floor( sum( BASE_GOODSCOUNT ) ) AS amount
+    FROM
+    wm_to_down_goods
+    WHERE
+    ORDER_ID != 'ZY'
+    GROUP BY
+    DATE_FORMAT( create_date, '%Y-%m-%d' )
+    ORDER BY
+    DATE_FORMAT( create_date, '%Y-%m-%d' ) DESC
+    LIMIT 7
+    ) TEMPTABLE
+    ORDER BY
+    create_date
+  </select>
+    <select id="studentCountMonth" resultType="java.util.Map">
+    SELECT
+	*
+    FROM
+	(SELECT GOODS_name AS goodsid, floor( sum( BASE_GOODSCOUNT ) ) AS amount FROM wm_to_up_goods WHERE ORDER_ID != 'ZY' GROUP BY GOODS_ID)  TEMPTABLE
+    ORDER BY
+	amount DESC
+	LIMIT 6
+  </select>
+  <select id="studentCount" resultType="java.util.Map">
+      SELECT
+      *
+      FROM
+      ( SELECT GOODS_name AS goodsid, floor( sum( BASE_GOODSCOUNT ) ) AS amount FROM wm_to_down_goods WHERE ORDER_ID != 'ZY' GROUP BY GOODS_ID ) TEMPTABLE
+      ORDER BY
+      amount DESC
+      LIMIT 6
+  </select>
+</mapper>
